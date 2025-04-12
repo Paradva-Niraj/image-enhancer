@@ -12,7 +12,7 @@ function App() {
         <p className='text-lg text-gray-500'>Upload Your Image AI Change You</p>
       </div>
       <Home />
-      <div className='text-lg text-gray-500'>
+      <div className='text-lg text-gray-500 mt-8'>
           &copy; by nicxx
       </div>
     </div>

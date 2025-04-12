@@ -1,0 +1,71 @@
+.aurora-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #ffffff;
+    margin: auto;
+    box-shadow: 0 0 30px rgba(0, 255, 128, 0.2);
+  }
+  
+  /* Aurora waves */
+  .aurora {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    filter: blur(80px);
+    animation: auroraMove 3s ease-in-out infinite alternate;
+    opacity: 0.6;
+  }
+  
+  .aurora1 {
+    background: radial-gradient(circle at center, rgba(0, 255, 128, 0.755), transparent 60%);
+    top: -30%;
+    left: -30%;
+    animation-delay: 0s;
+  }
+  .aurora2 {
+    background: radial-gradient(circle at center, rgba(0, 128, 255, 0.779), transparent 60%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 2s;
+  }
+  .aurora3 {
+    background: radial-gradient(circle at center, rgba(255, 0, 255, 0.596), transparent 60%);
+    top: 30%;
+    left: 50%;
+    animation-delay: 4s;
+  }
+  
+  @keyframes auroraMove {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(-20%, -10%) scale(1.3);
+    }
+  }
+  
+  /* Stars (twinkle) */
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow:
+      20% 30% #ffffff66,
+      50% 10% #ffffff99,
+      60% 60% #ffffff33,
+      80% 20% #ffffff44,
+      90% 70% #ffffff88;
+    animation: twinkle 2s ease-in-out infinite alternate;
+    z-index: 1;
+  }
+  
+  @keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+  }
+  

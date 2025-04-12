@@ -1,11 +1,31 @@
+import { useState } from "react";
 import ImageReview from "./ImageReview";
-import ImageUpload from "./IMageUpload";
+import ImageUpload from "./ImageUpload";
+import { enhanceImageAPI } from "../API/enhanceImageAPI";
 
 function Home() {
+
+    const [upload,setUpload] = useState(null);
+    const [enhanced,setEnhanced] = useState(null);
+    const [loading,setLoading] = useState(false);
+
+    const uploadChange = async (file) => {
+        setUpload(URL.createObjectURL(file));
+        setLoading(true);
+        try {
+            const enhancedURL = await enhanceImageAPI(file);
+            setEnhanced(enhancedURL);
+            setLoading(false);
+        } catch (error) {
+            console.log("image API error",error);
+    
+        }
+    }
+
     return ( <>
 
-        <ImageUpload />
-        <ImageReview />
+        <ImageUpload uploadChange={uploadChange}/>
+        <ImageReview loading={loading} upload={upload} enhanced={enhanced}/>
 
     </> );
 }
