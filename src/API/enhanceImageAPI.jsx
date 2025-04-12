@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY;// Replace with your actual API key
-const BASE_URL = 'https://deep-image.ai/rest_api/process';
+const BASE_URL = 'https://techhk.aoscdn.com';
 const MAXIMUM_RETRIES = 20;
 
 export const enhanceImageAPI = async (file) => {
@@ -23,7 +23,7 @@ const uploadImage = async (file) => {
     formData.append("image_file", file);
 
     const { data } = await axios.post(
-        `${BASE_URL}/api/tasks/visual/scale`,
+        `https://techhk.aoscdn.com/api/tasks/visual/scale`,
         formData,
         {
             headers: {

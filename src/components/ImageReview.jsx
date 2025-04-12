@@ -35,21 +35,49 @@ function ImageReview({ loading, upload, enhanced }) {
 
             {/* Enhanced image which uploaded by user and fetc from api */}
             <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-                <h2 className="text-xl font font-semibold text-center text-white py-2 px-2 bg-blue-950">Enhanced Image</h2>
-                {
-                    (!error && upload) ? (!loading) ? <h2>{enhanced}</h2> : <Loading />
-                        : <div className="flex items-center justify-center h-80 bg-gray-200">
-                            Upload Image
-                        </div>
+                <h2 className="text-xl font font-semibold text-center text-white py-2 px-2 bg-blue-950">
+                    Enhanced Image
+                </h2>
+
+                {(!error && upload) ? (
+                    !loading ? (
+                        enhanced ? (
+                            <div className="relative flex flex-col items-center">
+                                <img
+                                    src={enhanced}
+                                    alt="Enhanced"
+                                    onError={hasError}
+                                    className="w-full h-full object-contain max-h-[320px] bg-gray-100"
+                                />
+                                <a
+                                    href={enhanced}
+                                    download="enhanced-image.jpg"
+                                    className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                                >
+                                    Download Enhanced Image
+                                </a>
 
 
-                    // (!error && upload) ? (!loading)?<img src="" alt="" onError={hasError} className="w-full h-full object-cover" />:<Loading />
-                    //     : <div className="flex items-center justify-center h-80 bg-gray-200">
-                    //     Upload Image
-                    // </div>
-                }
+                            </div>
+                        ) : (
+                            <div className="flex items-center justify-center h-80 bg-gray-100">
+                                No enhanced image URL
+                            </div>
+                        )
+                    ) : (
+                        <Loading />
+                    )
+                ) : (
+                    <div className="flex items-center justify-center h-80 bg-gray-200">
+                        Upload Image
+                    </div>
 
+
+
+                )}
             </div>
+
+
         </div>
     );
 }

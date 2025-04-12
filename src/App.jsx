@@ -3,7 +3,6 @@ import './App.css'
 import Home from './components/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 py-8 px-4'> 
