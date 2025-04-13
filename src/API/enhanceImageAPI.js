@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 // const API_KEY = import.meta.env.VITE_API_KEY_NEW;
-const BACKEND = "https://image-enhancer-3.onrender.com";
+const BACKEND = "https://image-enhancer-4.onrender.com";
 const uploadToCloudinary = async (file) => {
   if (!file) return null;
 
@@ -34,7 +34,7 @@ const uploadToCloudinary = async (file) => {
 
 export const enhanceImageAPI = async (cloudinaryUrl) => {
   try {
-    const res = await axios.post(BACKEND, {
+    const res = await axios.post(`${BACKEND}/api/enhance`, {
       imageUrl: await uploadToCloudinary(cloudinaryUrl),
     });
 
