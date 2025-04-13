@@ -13,6 +13,21 @@ function ImageReview({ loading, upload, enhanced }) {
         console.log("Upload prop updated in ImageReview:", upload);
     }, [upload]);
 
+        const handleDownload = async () => {
+            const response = await fetch(enhanced);
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+    
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "enhanced_image.jpg"; // change file name if needed
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        };
+
+
     return (
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-full">
 
@@ -50,13 +65,13 @@ function ImageReview({ loading, upload, enhanced }) {
                                     className="w-full h-full object-contain max-h-[320px] bg-gray-100"
                                 />
 
-                                <a
-                                    href={enhanced} // Link to the image file for download
-                                    download="enhanced_image.jpg" // You can specify the file name here
+                                <button
+                                    onClick={handleDownload}
                                     className="absolute bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded"
                                 >
                                     Download
-                                </a>
+                                </button>
+
 
 
                             </div>
