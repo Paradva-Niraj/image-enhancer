@@ -51,25 +51,12 @@ function ImageReview({ loading, upload, enhanced }) {
                                 />
 
                                 <a
-                                    href={enhanced}
-                                    className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      
-                                      // Create a temporary anchor element
-                                      const link = document.createElement('a');
-                                      link.href = enhanced;
-                                      link.download = "enhanced-image.jpg"; // Sets the filename
-                                      link.target = "_blank"; // Prevents redirecting in same tab
-                                      
-                                      // Programmatically trigger the download
-                                      document.body.appendChild(link);
-                                      link.click();
-                                      document.body.removeChild(link);
-                                    }}
-                                  >
-                                    Download Enhanced Image
-                                  </a>
+                                    href={enhanced} // Link to the image file for download
+                                    download="enhanced_image.jpg" // You can specify the file name here
+                                    className="absolute bottom-4 right-4 bg-blue-500 text-white py-2 px-4 rounded"
+                                >
+                                    Download
+                                </a>
 
 
                             </div>
