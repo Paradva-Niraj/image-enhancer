@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ImageReview from "./ImageReview";
-import ImageUpload from "./ImageUpload";
+import ImageReview from "./ImageReview.jsx";
+import ImageUpload from "./ImageUpload.jsx";
 import { enhanceImageAPI } from "../API/enhanceImageAPI";
 
 function Home() {
