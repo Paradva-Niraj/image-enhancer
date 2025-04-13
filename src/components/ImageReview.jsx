@@ -49,13 +49,27 @@ function ImageReview({ loading, upload, enhanced }) {
                                     onError={hasError}
                                     className="w-full h-full object-contain max-h-[320px] bg-gray-100"
                                 />
+
                                 <a
                                     href={enhanced}
-                                    download="enhanced-image.jpg"
                                     className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-                                >
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      
+                                      // Create a temporary anchor element
+                                      const link = document.createElement('a');
+                                      link.href = enhanced;
+                                      link.download = "enhanced-image.jpg"; // Sets the filename
+                                      link.target = "_blank"; // Prevents redirecting in same tab
+                                      
+                                      // Programmatically trigger the download
+                                      document.body.appendChild(link);
+                                      link.click();
+                                      document.body.removeChild(link);
+                                    }}
+                                  >
                                     Download Enhanced Image
-                                </a>
+                                  </a>
 
 
                             </div>

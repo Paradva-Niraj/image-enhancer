@@ -16,7 +16,7 @@
     width: 200%;
     height: 200%;
     filter: blur(80px);
-    animation: auroraMove 3s ease-in-out infinite alternate;
+    animation: auroraMove 1s ease-in-out infinite alternate;
     opacity: 0.6;
   }
   
