@@ -1,12 +1,55 @@
-# React + Vite
+# Enhanced Image Downloader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that allows users to view and download enhanced images directly from the browser. The images are fetched from an API and optionally hosted/stored on Cloudinary.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Purpose
 
-## Expanding the ESLint configuration
+The main goal of this project is to provide a simple and clean UI for:
+- Displaying enhanced or processed images
+- Allowing users to download those images without redirecting or opening a new tab
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- ⚛️ Built with React
+- 📦 Fetch image data from an external API
+- ☁️ Uses Cloudinary for image hosting (optional)
+- 📥 One-click image download (without opening in a new tab)
+- 🎨 Responsive and clean UI with Tailwind CSS
+
+---
+
+## 🧰 Tech Stack
+
+- **React** – Frontend library
+- **Tailwind CSS** – Styling framework
+- **Cloudinary** – Image hosting and delivery
+- **Fetch API** – To retrieve images
+- **Blob API** – For enabling direct download without navigation
+
+
+![LPtop_view](./LiveDemo/Macbook-Air-image-enhancer-khaki.vercel.app.png)
+
+![tab_view](./LiveDemo/Galaxy-Tab-S7-image-enhancer-khaki.vercel.app.png)
+
+![phone_view](./LiveDemo/iPhone-14-Plus-image-enhancer-khaki.vercel.app.png)
+
+
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/Paradva-Niraj/image-enhancer.git
+cd image-enhancer
+
+npm install
+
+npm run dev
+
+npm run build
