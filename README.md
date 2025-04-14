@@ -58,7 +58,7 @@ npm run build
 start server 
 ```bash
 
-ce server
+cd server
 
 rpm index.js
 ```
